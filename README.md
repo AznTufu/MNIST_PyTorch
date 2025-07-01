@@ -78,6 +78,7 @@ Le modèle a été entraîné avec :
 
 ## 📈 Résultat
 
+```bash
 Test Error: 
  Accuracy: 98.4%, Avg loss: 0.047277 
 
@@ -92,3 +93,4 @@ loss: 0.134337  [44864/60000]
 
 Test Error: 
  Accuracy: 99.2%, Avg loss: 0.026052 
+```
