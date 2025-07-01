@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reconnaissance de Chiffres - CNN ONNX</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🎨 Reconnaissance de Chiffres Manuscrits</h1>
+        <p class="description">Dessinez un chiffre entre 0 et 9 dans la zone ci-dessous</p>
+        
+        <div class="canvas-container">
+            <canvas id="drawingCanvas" width="280" height="280"></canvas>
+            <div class="canvas-overlay">
+                <div class="grid"></div>
+            </div>
+        </div>
+        
+        <div class="controls">
+            <button id="clearBtn" class="btn btn-secondary">🗑️ Effacer</button>
+            <button id="predictBtn" class="btn btn-primary">🔮 Prédire</button>
+        </div>
+        
+        <div class="results">
+            <div class="prediction-result" id="predictionResult">
+                <h3>Prédiction</h3>
+                <div class="predicted-digit" id="predictedDigit">?</div>
+                <div class="confidence" id="confidence">Dessinez un chiffre</div>
+            </div>
+            
+            <div class="probabilities" id="probabilities">
+                <h3>Probabilités</h3>
+                <div class="prob-bars" id="probBars"></div>
+            </div>
+        </div>
+        
+        <div class="info">
+            <h3>📊 Informations sur le modèle</h3>
+            <p>Ce modèle CNN a été entraîné sur le dataset MNIST avec les caractéristiques suivantes :</p>
+            <ul>
+                <li>Architecture : CNN avec 3 blocs convolutionnels + couches fully connected</li>
+                <li>Augmentation de données : rotation, translation, perspective</li>
+                <li>Normalisation : [-1, 1] avec mean=0.5, std=0.5</li>
+                <li>Dropout et BatchNorm pour la régularisation</li>
+            </ul>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/onnxruntime-web@1.16.3/dist/ort.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
